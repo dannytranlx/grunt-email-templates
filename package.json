@@ -1,7 +1,7 @@
 {
   "name": "grunt-email-templates",
   "description": "Email templates task",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/ertrzyiks/grunt-email-templates",
   "author": {
     "name": "Mateusz Derks",
