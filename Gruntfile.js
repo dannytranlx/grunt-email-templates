@@ -34,6 +34,16 @@ module.exports = function(grunt) {
         files: {
           'tmp/template1': 'test/fixtures/template1'
         }
+      },
+      custom_options: {
+        options: {
+          htmlFileName: 'index.html',
+          txtFileName: 'index.txt'
+        },
+
+        files: {
+          'tmp/template2': 'test/fixtures/template2'
+        }
       }
     },
 

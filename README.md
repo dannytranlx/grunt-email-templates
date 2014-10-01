@@ -34,15 +34,48 @@ grunt.initConfig({
 });
 ```
 
+### Options
+
+#### htmlFileName
+
+Type: `String`  
+Default: `html.html`
+
+Name of output file with html content.
+
+#### txtFileName
+
+Type: `String`  
+Default: `text.txt`
+
+Name of output file with text content.
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever.
+In this example, the default options are used. Template from *source/folder* will be handled by emails-template and saved
+in *target/folder* with file names html.html and text.txt.
 
 ```js
 grunt.initConfig({
   email_templates: {
+    files: {
+      'target/folder': 'source/folder'
+    },
+  },
+});
+```
+
+#### Custom filenames
+Template from *source/folder* will be handled by emails-template and saved
+in *target/folder* with file names index.html and text.txt.
+
+```js
+grunt.initConfig({
+  email_templates: {
+    options: {
+      htmlFileName: 'index.html'
+    },
     files: {
       'target/folder': 'source/folder'
     },

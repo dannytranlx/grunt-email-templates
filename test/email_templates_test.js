@@ -15,5 +15,18 @@ exports.email_templates = {
     test.equal(actualTxt, expectedTxt, 'should generate text file');
 
     test.done();
+  },
+  custom_options: function(test) {
+    test.expect(2);
+
+    var actualHtml = grunt.file.read('tmp/template2/index.html');
+    var actualTxt = grunt.file.read('tmp/template2/index.txt');
+    var expectedHtml = grunt.file.read('test/expected/template2/index.html');
+    var expectedTxt = grunt.file.read('test/expected/template2/index.txt');
+
+    test.equal(actualHtml, expectedHtml, 'should generate html file');
+    test.equal(actualTxt, expectedTxt, 'should generate text file');
+
+    test.done();
   }
 };
