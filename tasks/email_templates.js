@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                 mkdirp(folder, function (err) {
                     next(err);
                 });
-            }
+            };
         }
 
         function doWriteFile(file, content) {
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 
                     template(templateName, {}, next);
                 });
-            }
+            };
         }
 
         function doExporMailTemplate(dest, options) {
