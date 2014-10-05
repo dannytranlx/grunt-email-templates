@@ -1,4 +1,4 @@
-# grunt-email-templates
+# grunt-email-templates [![Build Status](https://travis-ci.org/ertrzyiks/grunt-email-templates.svg?branch=master)](https://travis-ci.org/ertrzyiks/grunt-email-templates)
 
 > Email templates task
 
