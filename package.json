@@ -1,7 +1,7 @@
 {
   "name": "grunt-email-templates",
   "description": "Email templates task",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/ertrzyiks/grunt-email-templates",
   "author": {
     "name": "Mateusz Derks",
@@ -37,7 +37,7 @@
     "grunt": "~0.4.5"
   },
   "keywords": [
-    "gruntplugin"
+    "grunt node-email-templates"
   ],
   "dependencies": {
     "async": "^0.9.0",
