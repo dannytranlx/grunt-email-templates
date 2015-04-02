@@ -18,7 +18,8 @@ module.exports = function(grunt) {
     grunt.registerMultiTask('email_templates', 'Email templates task', function () {
         var options = this.options({
                 htmlFileName: 'html.html',
-                txtFileName: 'text.txt'
+                txtFileName: 'text.txt',
+                locals: {}
             }),
             done = this.async();
 
@@ -40,19 +41,19 @@ module.exports = function(grunt) {
             };
         }
 
-        function doCreateTemplate(folder, templateName) {
+        function doCreateTemplate(folder, templateName, options) {
             return function (next) {
                 emailTemplates(folder, function (err, template) {
                     if (err) {
                         return next(err);
                     }
 
-                    template(templateName, {}, next);
+                    template(templateName, options.locals, next);
                 });
             };
         }
 
-        function doExporMailTemplate(dest, options) {
+        function doExportMailTemplate(dest, options) {
             return function (html, text, next) {
                 async.parallel([
                     doWriteFile(path.join(dest, options.htmlFileName), html),
@@ -72,8 +73,8 @@ module.exports = function(grunt) {
 
                 async.waterfall([
                     doMkdirp(dest),
-                    doCreateTemplate(folder, templateName),
-                    doExporMailTemplate(dest, options)
+                    doCreateTemplate(folder, templateName, options),
+                    doExportMailTemplate(dest, options)
                 ], cb);
             }, next);
         }, function (err) {

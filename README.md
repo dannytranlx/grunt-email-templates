@@ -38,17 +38,24 @@ grunt.initConfig({
 
 #### htmlFileName
 
-Type: `String`  
+Type: `String`
 Default: `html.html`
 
 Name of output file with html content.
 
 #### txtFileName
 
-Type: `String`  
+Type: `String`
 Default: `text.txt`
 
 Name of output file with text content.
+
+#### locals
+
+Type: `Object`
+Default: `{}`
+
+Object with the variables used inside the templates.
 
 ### Usage Examples
 
@@ -67,14 +74,16 @@ grunt.initConfig({
 ```
 
 #### Custom filenames
-Template from *source/folder* will be handled by emails-template and saved
-in *target/folder* with file names index.html and text.txt.
+Template from *source/folder* will be handled by emails-template and saved in *target/folder* with file names index.html and text.txt. Data inside the `locals` object will also interpolate within the template (eg. `<%= name %>` into *Bobby*).
 
 ```js
 grunt.initConfig({
   email_templates: {
     options: {
-      htmlFileName: 'index.html'
+      htmlFileName: 'index.html',
+      locals: {
+        name: 'Bobby'
+      }
     },
     files: {
       'target/folder': 'source/folder'
