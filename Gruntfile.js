@@ -38,7 +38,10 @@ module.exports = function(grunt) {
       custom_options: {
         options: {
           htmlFileName: 'index.html',
-          txtFileName: 'index.txt'
+          txtFileName: 'index.txt',
+          locals: {
+            name: 'Bobby'
+          }
         },
 
         files: {
